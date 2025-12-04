@@ -4,7 +4,7 @@ fn solution(input: &str) -> Output<i32> {
 	let mut at_zero_amount = 0;
 	let mut passed_zero_amount = 0;
 	let mut dial_value = 50;
-	for line in input.trim().lines() {
+	for line in input.lines() {
 		let direction = line.get(0..1).unwrap();
 		let amount: i32 = line.get(1..).unwrap().parse().unwrap();
 

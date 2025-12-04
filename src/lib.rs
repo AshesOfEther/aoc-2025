@@ -17,7 +17,7 @@ pub fn __run_solution<T: Debug + Display + PartialEq, F: Fn(&str) -> (Option<T>,
 	let mut part1_failures = 0;
 	let mut part2_failures = 0;
 	for (i, (test_input, part1_expected, part2_expected)) in tests.iter().enumerate() {
-		let (part1_actual, part2_actual) = solution(test_input);
+		let (part1_actual, part2_actual) = solution(test_input.trim());
 
 		if let Some(expected) = part1_expected
 			&& let Some(actual) = part1_actual
@@ -41,7 +41,7 @@ pub fn __run_solution<T: Debug + Display + PartialEq, F: Fn(&str) -> (Option<T>,
 		}
 	}
 
-	let (part1, part2) = solution(input);
+	let (part1, part2) = solution(input.trim());
 	if let Some(part1) = part1
 		&& part1_failures == 0
 	{
