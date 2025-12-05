@@ -1,14 +1,15 @@
 use aoc_2025::*;
 
+#[rustfmt::skip]
 static OFFSETS: &[(i8, i8)] = &[
 	(-1, -1),
-	(0, -1),
-	(1, -1),
-	(-1, 0),
-	(1, 0),
-	(-1, 1),
-	(0, 1),
-	(1, 1),
+	( 0, -1),
+	( 1, -1),
+	(-1,  0),
+	( 1,  0),
+	(-1,  1),
+	( 0,  1),
+	( 1,  1),
 ];
 
 fn find_accessible_cells(grid: &[Vec<bool>]) -> Vec<(usize, usize)> {
@@ -47,8 +48,6 @@ fn find_accessible_cells(grid: &[Vec<bool>]) -> Vec<(usize, usize)> {
 }
 
 fn solution(input: &str) -> Output<usize> {
-	#[rustfmt::skip]
-
 	let mut grid: Vec<Vec<bool>> = input
 		.lines()
 		.map(|line| line.chars().map(|c| c == '@').collect())
